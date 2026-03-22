@@ -1,0 +1,27 @@
+from typing import List
+
+
+"""
+Dado un array de enteros que representa los distintos tipos de monedas disponibles,
+devuelve el mínimo número de monedas posible para sumar un valor amount.
+
+Si es imposible sumar ese valor, devuelve -1
+
+Ejemplo 1:
+ Input:
+   coins = [1,2,5]
+   amount = 11
+ Output: 3 (5 + 5 + 1)
+
+Ejemplo 2:
+ Input:
+   coins = [2]
+   amount = 3
+ Output: -1
+"""
+
+
+class CoinChange:
+
+    def coin_change(self, coins: List[int], amount: int) -> int:
+        raise NotImplementedError("Not implemented yet")
