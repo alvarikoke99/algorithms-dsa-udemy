@@ -9,4 +9,9 @@ isUnique("abcded") => false;
 class IsUnique:
 
     def is_unique(self, s: str) -> bool:
-        raise NotImplementedError("Not implemented yet")
+        checked = set()
+        for char in s:
+            if char in checked:
+                return False
+            checked.add(char)
+        return True

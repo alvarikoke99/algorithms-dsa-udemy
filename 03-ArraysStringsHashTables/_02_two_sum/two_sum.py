@@ -12,6 +12,8 @@ Ejemplo 1:
 Ejemplo 2:
  Input: nums = [9,2,5,6], target = 100
  Output: null
+
+O(N)
 """
 from typing import List, Optional
 
@@ -19,4 +21,11 @@ from typing import List, Optional
 class TwoSum:
 
     def two_sum(self, nums: List[int], target: int) -> Optional[List[int]]:
-        raise NotImplementedError("Not implemented yet")
+        if nums is None or len(nums) < 2:
+            return None
+        comp_map = dict()
+        for i, value in enumerate(nums):
+            if value in comp_map:
+                return [comp_map.get(value), i]
+            comp_map[target - value] = i
+        return None
