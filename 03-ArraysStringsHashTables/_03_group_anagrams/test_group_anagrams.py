@@ -1,5 +1,5 @@
 import pytest
-from group_anagrams import GroupAnagrams
+from .group_anagrams import GroupAnagrams
 
 
 def contains_all(anagrams, group):

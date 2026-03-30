@@ -1,8 +1,5 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
-from single_linked_list import Node
-from add_two_numbers import AddTwoNumbers
+from single_linked_list import Node, SingleLinkedList
+from .add_two_numbers import AddTwoNumbers
 
 
 def test_add_two_numbers():

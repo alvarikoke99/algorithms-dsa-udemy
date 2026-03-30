@@ -1,5 +1,5 @@
 from collections import deque
-from sort_stack import SortStack
+from .sort_stack import SortStack
 
 
 def test_sort_stack():

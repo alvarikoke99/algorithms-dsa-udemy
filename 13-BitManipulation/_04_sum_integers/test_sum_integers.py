@@ -1,5 +1,5 @@
 import pytest
-from sum_integers import SumIntegers
+from .sum_integers import SumIntegers
 
 
 def test_sum_integers():

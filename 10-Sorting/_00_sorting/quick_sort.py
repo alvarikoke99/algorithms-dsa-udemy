@@ -1,5 +1,5 @@
 from typing import List
-from search_utils import swap
+from .search_utils import swap
 
 """
 Dividimos la lista en dos recursivamente, una parte con los elementos más pequeños que el pivote

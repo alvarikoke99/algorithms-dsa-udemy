@@ -1,6 +1,3 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
 from single_linked_list import Node
 from typing import Optional
 
@@ -18,4 +15,25 @@ Ejemplo:
 class MergeTwoSortedLists:
 
     def merge_two_lists(self, list1: Optional[Node], list2: Optional[Node]) -> Optional[Node]:
-        raise NotImplementedError("Not implemented yet")
+        if not list1:
+            return list2
+        if not list2:
+            return list1
+
+        ordered = Node()
+        current = ordered
+        while list1 and list2:
+            if list1.value <= list2.value:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+
+        if not list1:
+            current.next = list2
+        else:
+            current.next = list1
+
+        return ordered.next

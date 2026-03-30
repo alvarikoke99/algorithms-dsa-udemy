@@ -1,4 +1,4 @@
-from binary_tree_max_path_sum import BinaryTreeMaxPathSum, TreeNode
+from .binary_tree_max_path_sum import BinaryTreeMaxPathSum, TreeNode
 
 
 def test_binary_tree_max_path_sum():

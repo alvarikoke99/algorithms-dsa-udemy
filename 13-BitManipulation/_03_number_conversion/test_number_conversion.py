@@ -1,5 +1,5 @@
 import pytest
-from number_conversion import NumberConversion
+from .number_conversion import NumberConversion
 
 
 def test_number_conversion():

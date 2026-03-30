@@ -1,4 +1,4 @@
-from maximum_depth import MaximumDepth, Node
+from .maximum_depth import MaximumDepth, Node
 
 
 def test_max_depth():

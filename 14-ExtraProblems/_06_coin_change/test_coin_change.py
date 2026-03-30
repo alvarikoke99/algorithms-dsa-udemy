@@ -1,4 +1,4 @@
-from coin_change import CoinChange
+from .coin_change import CoinChange
 
 
 def test_coin_change():

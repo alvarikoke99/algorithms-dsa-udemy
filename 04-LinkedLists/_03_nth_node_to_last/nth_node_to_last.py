@@ -1,6 +1,3 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
 from single_linked_list import Node
 from typing import Optional
 
@@ -17,4 +14,19 @@ Ejemplo:
 class NthNodeToLast:
 
     def nth_node_to_last(self, head: Optional[Node], n: int) -> Optional[Node]:
-        raise NotImplementedError("Not implemented yet")
+        if not head:
+            return None
+
+        p1 = p2 = head
+        cont = 0
+        while cont < n:
+            if not p1:
+                return None
+            p1 = p1.next
+            cont +=1
+
+        while p1:
+            p1 = p1.next
+            p2 = p2.next
+
+        return p2

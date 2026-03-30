@@ -1,5 +1,5 @@
 from typing import List
-from search_utils import swap
+from .search_utils import swap
 
 
 class SelectionSort:

@@ -1,5 +1,5 @@
 import pytest
-from is_unique import IsUnique
+from .is_unique import IsUnique
 
 
 def test_is_unique():

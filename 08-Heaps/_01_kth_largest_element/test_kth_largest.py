@@ -1,4 +1,4 @@
-from kth_largest import KthLargest
+from .kth_largest import KthLargest
 
 
 def test_kth_largest_element():

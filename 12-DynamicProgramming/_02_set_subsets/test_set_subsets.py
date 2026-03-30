@@ -1,4 +1,4 @@
-from set_subsets import SetSubsets
+from .set_subsets import SetSubsets
 
 
 def test_set_subsets():

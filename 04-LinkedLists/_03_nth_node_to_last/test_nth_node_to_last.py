@@ -1,8 +1,5 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
 from single_linked_list import Node
-from nth_node_to_last import NthNodeToLast
+from .nth_node_to_last import NthNodeToLast
 
 
 def test_nth_node_to_last():

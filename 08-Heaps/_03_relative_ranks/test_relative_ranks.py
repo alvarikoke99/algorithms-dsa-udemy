@@ -1,4 +1,4 @@
-from relative_ranks import RelativeRanks
+from .relative_ranks import RelativeRanks
 
 
 def test_relative_ranks():

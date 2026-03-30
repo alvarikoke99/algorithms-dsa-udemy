@@ -1,4 +1,4 @@
-from longest_unique_substring import LongestUniqueSubstring
+from .longest_unique_substring import LongestUniqueSubstring
 
 
 def test_longest_unique_substring():

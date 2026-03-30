@@ -1,4 +1,4 @@
-from clone_graph import Node, CloneGraph
+from .clone_graph import Node, CloneGraph
 
 
 def test_clone_graph():

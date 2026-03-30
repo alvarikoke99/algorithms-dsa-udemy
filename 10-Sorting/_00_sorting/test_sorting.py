@@ -1,7 +1,7 @@
-from bubble_sort import BubbleSort
-from merge_sort import MergeSort
-from quick_sort import QuickSort
-from selection_sort import SelectionSort
+from .bubble_sort import BubbleSort
+from .merge_sort import MergeSort
+from .quick_sort import QuickSort
+from .selection_sort import SelectionSort
 
 array = [8, 4, 0, 3, 6, 1, 7, 19, 12, 2]
 expected_array = [0, 1, 2, 3, 4, 6, 7, 8, 12, 19]

@@ -1,5 +1,5 @@
 import pytest
-from zero_matrix import ZeroMatrix
+from .zero_matrix import ZeroMatrix
 
 
 def test_zero_matrix():

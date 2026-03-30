@@ -1,4 +1,4 @@
-from list_of_depths import ListOfDepths, Node
+from .list_of_depths import ListOfDepths, Node
 
 
 def test_list_of_depths():

@@ -1,4 +1,4 @@
-from word_search import WordSearch
+from .word_search import WordSearch
 
 
 def test_word_search():

@@ -1,4 +1,4 @@
-from merge_k_sorted_lists import Node, MergeKSortedLists
+from .merge_k_sorted_lists import Node, MergeKSortedLists
 
 
 def test_merge_k_sorted_lists():

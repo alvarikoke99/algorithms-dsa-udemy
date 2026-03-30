@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, value: int):
+    def __init__(self, value: int = None):
         self.value = value
         self.next = None
 
@@ -17,6 +17,9 @@ class SingleLinkedList:
         while current.next is not None:
             current = current.next
         current.next = Node(value)
+
+    def init_list(self, value: Node) -> None:
+        self.head = value
 
     def delete_node(self, value: int) -> None:
         if self.head is None:

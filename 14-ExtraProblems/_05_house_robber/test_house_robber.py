@@ -1,4 +1,4 @@
-from house_robber import HouseRobber
+from .house_robber import HouseRobber
 
 
 def test_house_robber():

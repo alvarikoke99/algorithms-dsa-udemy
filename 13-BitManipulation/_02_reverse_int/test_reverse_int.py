@@ -1,5 +1,5 @@
 import pytest
-from reverse_int import ReverseInt
+from .reverse_int import ReverseInt
 
 
 def test_reverse_int():

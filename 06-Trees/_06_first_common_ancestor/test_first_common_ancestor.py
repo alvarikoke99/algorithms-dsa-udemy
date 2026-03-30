@@ -1,4 +1,4 @@
-from first_common_ancestor import FirstCommonAncestor, Node
+from .first_common_ancestor import FirstCommonAncestor, Node
 
 
 def test_first_common_ancestor():

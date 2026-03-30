@@ -1,4 +1,4 @@
-from word_break import WordBreak
+from .word_break import WordBreak
 
 
 def test_word_break():

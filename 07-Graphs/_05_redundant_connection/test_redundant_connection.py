@@ -1,4 +1,4 @@
-from redundant_connection import RedundantConnection
+from .redundant_connection import RedundantConnection
 
 
 def test_redundant_connection():

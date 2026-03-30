@@ -1,5 +1,5 @@
 import pytest
-from build_order import BuildOrder
+from .build_order import BuildOrder
 
 
 def test_build_order():

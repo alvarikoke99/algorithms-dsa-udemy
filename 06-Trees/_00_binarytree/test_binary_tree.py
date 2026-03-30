@@ -4,7 +4,7 @@
   4     5      6
 7     8
 """
-from binary_tree import BinaryTreeTraversals, Node
+from .binary_tree import BinaryTreeTraversals, Node
 
 
 def test_traversals(capsys):

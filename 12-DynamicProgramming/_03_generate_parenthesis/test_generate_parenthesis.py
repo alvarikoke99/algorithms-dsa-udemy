@@ -1,4 +1,4 @@
-from generate_parenthesis import GenerateParenthesis
+from .generate_parenthesis import GenerateParenthesis
 
 
 def test_generate_parenthesis():

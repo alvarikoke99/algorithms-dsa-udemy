@@ -1,4 +1,4 @@
-from single_linked_list import SingleLinkedList
+from .single_linked_list import SingleLinkedList
 
 
 def test_single_linked_list():

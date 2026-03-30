@@ -1,4 +1,4 @@
-from route_between_nodes import Graph, GraphNode, GraphNodeStatus, RouteBetweenNodes
+from .route_between_nodes import Graph, GraphNode, GraphNodeStatus, RouteBetweenNodes
 
 
 def clear(graph: Graph) -> None:

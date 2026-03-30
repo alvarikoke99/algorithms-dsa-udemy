@@ -1,5 +1,5 @@
 import pytest
-from queue_with_stacks import QueueWithStacks
+from .queue_with_stacks import QueueWithStacks
 
 
 def test_queue_with_stacks():

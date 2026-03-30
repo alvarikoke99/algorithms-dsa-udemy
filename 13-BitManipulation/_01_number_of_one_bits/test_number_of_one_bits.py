@@ -1,5 +1,5 @@
 import pytest
-from number_of_one_bits import NumberOfOneBits
+from .number_of_one_bits import NumberOfOneBits
 
 
 def test_number_of_one_bits():

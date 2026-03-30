@@ -1,8 +1,5 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
 from single_linked_list import Node
-from merge_two_sorted_lists import MergeTwoSortedLists
+from .merge_two_sorted_lists import MergeTwoSortedLists
 
 
 def test_merge_two_sorted_lists():

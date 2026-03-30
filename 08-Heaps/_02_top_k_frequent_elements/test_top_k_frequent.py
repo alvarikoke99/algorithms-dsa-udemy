@@ -1,4 +1,4 @@
-from top_k_frequent import TopKFrequent
+from .top_k_frequent import TopKFrequent
 
 
 def test_top_k_frequent():

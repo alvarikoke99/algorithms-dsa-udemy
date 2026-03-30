@@ -1,4 +1,4 @@
-from valid_parenthesis import ValidParenthesis
+from .valid_parenthesis import ValidParenthesis
 
 
 def test_valid_parenthesis():

@@ -1,8 +1,5 @@
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_00_linkedlist'))
-from single_linked_list import Node
-from swap_nodes_in_pairs import SwapNodesInPairs
+from single_linked_list import Node, SingleLinkedList
+from .swap_nodes_in_pairs import SwapNodesInPairs
 
 
 def test_swap_nodes_in_pairs():
@@ -14,6 +11,10 @@ def test_swap_nodes_in_pairs():
     lst.next.next.next.next = Node(8)
 
     result = swap.swap_nodes_in_pairs(lst)
+
+    l = SingleLinkedList()
+    l.init_list(result)
+    l.print_list()
 
     assert result.value == 2
     assert result.next.value == 1

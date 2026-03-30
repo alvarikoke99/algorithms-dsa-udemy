@@ -1,4 +1,4 @@
-from binary_search import BinarySearch, BinarySearchIterative
+from .binary_search import BinarySearch, BinarySearchIterative
 
 
 def test_binary_search():

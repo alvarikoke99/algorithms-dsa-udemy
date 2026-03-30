@@ -1,4 +1,4 @@
-from invert_binary_tree import InvertBinaryTree, Node
+from .invert_binary_tree import InvertBinaryTree, Node
 
 
 def test_invert_binary_tree():

@@ -1,4 +1,4 @@
-from is_sub_tree import IsSubTree, Node
+from .is_sub_tree import IsSubTree, Node
 
 
 def test_is_sub_tree():

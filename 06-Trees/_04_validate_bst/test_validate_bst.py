@@ -1,4 +1,4 @@
-from validate_bst import Node, ValidateBST
+from .validate_bst import Node, ValidateBST
 
 
 def test_validate_bst():

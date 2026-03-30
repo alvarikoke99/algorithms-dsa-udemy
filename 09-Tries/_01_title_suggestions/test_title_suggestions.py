@@ -1,4 +1,4 @@
-from title_suggestions import TitleSuggestions
+from .title_suggestions import TitleSuggestions
 
 
 def test_title_suggestions():

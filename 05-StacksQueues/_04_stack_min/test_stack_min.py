@@ -1,4 +1,4 @@
-from stack_min import StackMin
+from .stack_min import StackMin
 
 
 def test_stack_min():

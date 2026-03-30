@@ -1,4 +1,4 @@
-from robot_in_grid import Cell, RobotInGrid
+from .robot_in_grid import Cell, RobotInGrid
 
 
 def test_robot_in_grid():

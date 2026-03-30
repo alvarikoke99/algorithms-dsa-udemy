@@ -1,4 +1,4 @@
-from number_of_provinces import NumberOfProvinces
+from .number_of_provinces import NumberOfProvinces
 
 
 def test_number_of_provinces():

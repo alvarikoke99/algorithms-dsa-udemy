@@ -1,4 +1,4 @@
-from graph import Graph, GraphNode, GraphNodeStatus, DepthFirstSearch, BreadthFirstSearch
+from .graph import Graph, GraphNode, GraphNodeStatus, DepthFirstSearch, BreadthFirstSearch
 
 
 def reset_nodes(graph: Graph) -> None:

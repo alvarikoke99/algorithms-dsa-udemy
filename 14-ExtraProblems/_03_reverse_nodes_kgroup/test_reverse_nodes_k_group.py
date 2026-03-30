@@ -1,4 +1,4 @@
-from reverse_nodes_k_group import ListNode, ReverseNodesKGroup
+from .reverse_nodes_k_group import ListNode, ReverseNodesKGroup
 
 
 def test_reverse_nodes_k_group():
