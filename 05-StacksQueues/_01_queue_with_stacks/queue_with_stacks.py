@@ -1,8 +1,6 @@
 from collections import deque
 from typing import Optional
 
-from PIL.ImageOps import invert
-
 """
 Implementa una clase MyQueue utilizando dos stacks.
 

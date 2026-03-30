@@ -13,4 +13,11 @@ Ejemplo:
 
 class SortStack:
     def sort(self, stack: deque) -> deque:
-        raise NotImplementedError("Not implemented yet")
+        sorted_stack = deque()
+        while stack:
+            val = stack.pop()
+            while sorted_stack and val > sorted_stack[-1]:
+                stack.append(sorted_stack.pop())
+            sorted_stack.append(val)
+        print(sorted_stack)
+        return sorted_stack
