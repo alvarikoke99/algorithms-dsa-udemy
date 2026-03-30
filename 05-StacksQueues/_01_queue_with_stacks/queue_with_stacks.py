@@ -1,6 +1,8 @@
 from collections import deque
 from typing import Optional
 
+from PIL.ImageOps import invert
+
 """
 Implementa una clase MyQueue utilizando dos stacks.
 
@@ -11,20 +13,36 @@ permitiéndola usar como Pila o Cola (solo las operaciones de Pila están permit
 
 class QueueWithStacks:
     def __init__(self):
-        self.first_stack: deque = deque()
-        self.second_stack: deque = deque()
+        self.stack: deque = deque()
+        self.inverse_stack: deque = deque()
 
+    # O(1)
     def add(self, value: int) -> None:
-        raise NotImplementedError("Not implemented yet")
+        self.stack.append(value)
 
+    # O(N) worst case
     def peek(self) -> Optional[int]:
-        raise NotImplementedError("Not implemented yet")
+        if self.is_empty():
+            return None
+        self._dump_elem_into_second_stack()
+        return self.inverse_stack[-1]
 
+    # O(N) worst case
     def remove(self) -> Optional[int]:
-        raise NotImplementedError("Not implemented yet")
+        if self.is_empty():
+            return None
+        self._dump_elem_into_second_stack()
+        return self.inverse_stack.pop()
 
+    def _dump_elem_into_second_stack(self):
+        if not self.inverse_stack:
+            while self.stack:
+                self.inverse_stack.append(self.stack.pop())
+
+    # O(1)
     def is_empty(self) -> bool:
-        raise NotImplementedError("Not implemented yet")
+        return self.size() == 0
 
+    # O(1)
     def size(self) -> int:
-        raise NotImplementedError("Not implemented yet")
+        return len(self.stack + self.inverse_stack)
