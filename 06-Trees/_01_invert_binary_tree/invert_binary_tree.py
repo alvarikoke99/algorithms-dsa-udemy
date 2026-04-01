@@ -24,4 +24,9 @@ class Node:
 
 class InvertBinaryTree:
     def invert_tree(self, root: Optional[Node]) -> Optional[Node]:
-        raise NotImplementedError("Not implemented yet")
+        if not root:
+            return
+        tmp = root.left
+        root.left = self.invert_tree(root.right)
+        root.right = self.invert_tree(tmp)
+        return root

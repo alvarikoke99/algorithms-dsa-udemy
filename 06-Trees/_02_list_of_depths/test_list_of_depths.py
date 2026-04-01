@@ -12,6 +12,11 @@ def test_list_of_depths():
     root.right.right = Node(9)
 
     result = list_of_depths.list_of_depths(root)
+    for l in result:
+        list = []
+        for e in l:
+            list.append(e.value) 
+        print(list)
 
     assert result[0][0].value == 4
     assert result[1][0].value == 2

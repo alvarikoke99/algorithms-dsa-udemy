@@ -33,4 +33,13 @@ class Node:
 
 class ValidateBST:
     def is_valid_bst(self, root: Optional[Node]) -> bool:
-        raise NotImplementedError("Not implemented yet")
+      return self.is_valid_bst_aux(root, None, None)
+    
+    def is_valid_bst_aux(self, root: Optional[Node], min: Optional[int], max: Optional[int]) -> bool:
+      if not root:
+        return True
+      if min is not None and root.value <= min:  
+        return False 
+      if max is not None and root.value > max:
+         return False
+      return self.is_valid_bst_aux(root.left, min, root.value) and self.is_valid_bst_aux(root.right, root.value, max)
