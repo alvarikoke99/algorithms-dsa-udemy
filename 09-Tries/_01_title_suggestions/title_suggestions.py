@@ -1,5 +1,39 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 
+class TrieNode:
+    def __init__(self):
+        self.children: Dict[str, 'TrieNode'] = {}
+        self.is_end_of_word: bool = False
+
+
+class Trie:
+    def __init__(self, ignore_case = True):
+        self.root = TrieNode()
+        self.ignore_case = ignore_case
+
+    def insert(self, word: str) -> None:
+        current_node = self.root
+        target_word = word.lower() if self.ignore_case else word
+
+        for c in target_word:
+            child = current_node.children.get(c)
+            if child is None:
+                child = TrieNode()
+                current_node.children[c] = child
+            current_node = child
+
+        current_node.is_end_of_word = True
+
+    def search(self, prefix: str) -> bool:
+        current_node = self.root
+        target_prefix = prefix.lower() if self.ignore_case else prefix
+        
+        for c in target_prefix:
+            current_node = current_node.children.get(c)
+            if current_node is None:
+                return False
+
+        return True
 
 """
 Implementa un método que reciba un array de títulos de libros, un array con prefijos de búsqueda
@@ -28,5 +62,14 @@ Ejemplo 2:
 
 
 class TitleSuggestions:
-    def title_suggestions(self, books: List[str], prefixes: List[str], ignore_case: bool) -> List[bool]:
-        raise NotImplementedError("Not implemented yet")
+  def title_suggestions(self, books: List[str], prefixes: List[str], ignore_case: bool) -> List[bool]:
+    trie = Trie(ignore_case)   
+    results = []   
+
+    for book in books:
+      trie.insert(book)
+
+    for prefix in prefixes:
+      results.append(trie.search(prefix))
+
+    return results

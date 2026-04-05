@@ -1,4 +1,5 @@
 from typing import List
+import heapq
 
 
 """
@@ -20,4 +21,27 @@ Ejemplo 2:
 
 class RelativeRanks:
     def find_relative_ranks(self, score: List[int]) -> List[str]:
-        raise NotImplementedError("Not implemented yet")
+        max_heap = []
+        output = [0] * len(score)
+
+        for index, num in enumerate(score):
+            heapq.heappush(max_heap, (-num, index))
+
+        cont = 1
+        while max_heap:
+            _, pos = heapq.heappop(max_heap)
+            
+            match cont:
+                case 1:
+                    place = "Gold Medal"
+                case 2:
+                    place = "Silver Medal"
+                case 3:
+                    place = "Bronze Medal"
+                case _:
+                    place = str(cont)
+
+            cont += 1
+            output[pos] = place
+        
+        return output

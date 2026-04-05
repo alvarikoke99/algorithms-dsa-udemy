@@ -4,9 +4,9 @@ from typing import Dict, Optional
 
 
 class GraphNodeStatus(Enum):
-    UNVISITED = "UNVISITED"
-    VISITING = "VISITING"
-    VISITED = "VISITED"
+    UNVISITED = 1
+    VISITING = 2
+    VISITED = 3
 
 
 class GraphNode:

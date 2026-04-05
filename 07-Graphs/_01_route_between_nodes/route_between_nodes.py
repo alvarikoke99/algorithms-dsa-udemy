@@ -1,17 +1,18 @@
 from enum import Enum
 from typing import Dict, Optional
+from collections import deque
 
 
 class GraphNodeStatus(Enum):
-    UNVISITED = "UNVISITED"
-    VISITING = "VISITING"
-    VISITED = "VISITED"
+    UNVISITED = 1
+    VISITING = 2
+    VISITED = 3
 
 
 class GraphNode:
     def __init__(self, value: str):
         self.value = value
-        self.adjacents: Dict[str, 'GraphNode'] = {}
+        self.adjacents: Dict[str, GraphNode] = {}
         self.status = GraphNodeStatus.UNVISITED
 
     def add_neighbor(self, node: 'GraphNode') -> None:
@@ -45,6 +46,10 @@ class Graph:
         end_node = self.get_or_create_node(end)
         start_node.add_neighbor(end_node)
 
+    def clear(self):
+        for n in self.nodes.values():
+            n.status = GraphNodeStatus.UNVISITED
+
 
 """
 Dado un grafo dirigido y dos nodos, determina si hay un camino start-end
@@ -68,4 +73,20 @@ isRouteBetween(0, 0) = true
 
 class RouteBetweenNodes:
     def is_route_between(self, g: Graph, start: GraphNode, end: GraphNode) -> bool:
-        raise NotImplementedError("Not implemented yet")
+        if start == end:
+            return True 
+        
+        queue: deque[GraphNode] = deque()
+        start.value = GraphNodeStatus.VISITED
+        queue.append(start)
+
+        while queue:
+            current = queue.popleft()
+            if current == end:
+                return True
+            
+            for node in current.adjacents.values():
+                if node.status is not GraphNodeStatus.VISITED:
+                    queue.append(node)
+                    node.status = GraphNodeStatus.VISITED
+        return False

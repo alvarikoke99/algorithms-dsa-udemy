@@ -1,5 +1,5 @@
 from typing import List
-
+import heapq
 
 """
 Diseña una clase para obtener el kth elemento más grande de un stream de datos.
@@ -21,7 +21,17 @@ Ejemplo:
 
 class KthLargest:
     def __init__(self, k: int, nums: List[int]):
-        raise NotImplementedError("Not implemented yet")
-
+      self.k = k
+      self.min_heap = nums
+      heapq.heapify(self.min_heap)
+      
+      while len(self.min_heap) > k:
+        heapq.heappop(self.min_heap)
+          
     def add(self, val: int) -> int:
-        raise NotImplementedError("Not implemented yet")
+      heapq.heappush(self.min_heap, val)
+
+      if len(self.min_heap) > self.k:
+        heapq.heappop(self.min_heap)
+        
+      return self.min_heap[0]

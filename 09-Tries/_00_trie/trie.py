@@ -8,14 +8,15 @@ class TrieNode:
 
 
 class Trie:
-    def __init__(self):
+    def __init__(self, ignore_case = True):
         self.root = TrieNode()
+        self.ignore_case = ignore_case
 
     def insert(self, word: str) -> None:
         current_node = self.root
-        lowercase_word = word.lower()
+        target_word = word.lower() if self.ignore_case else word
 
-        for c in lowercase_word:
+        for c in target_word:
             child = current_node.children.get(c)
             if child is None:
                 child = TrieNode()
@@ -26,9 +27,9 @@ class Trie:
 
     def search(self, prefix: str) -> bool:
         current_node = self.root
-        prefix_lowercase = prefix.lower()
-
-        for c in prefix_lowercase:
+        target_prefix = prefix.lower() if self.ignore_case else prefix
+        
+        for c in target_prefix:
             current_node = current_node.children.get(c)
             if current_node is None:
                 return False

@@ -1,4 +1,5 @@
-from typing import List, Optional
+from typing import List, Optional, Dict
+from collections import deque
 
 
 """
@@ -12,11 +13,27 @@ Ejemplo:
 
 
 class Node:
-    def __init__(self):
-        self.val: int = 0
+    def __init__(self, val: int = 0):
+        self.val = val
         self.neighbors: List['Node'] = []
 
 
 class CloneGraph:
     def clone_graph(self, node: Optional[Node]) -> Optional[Node]:
-        raise NotImplementedError("Not implemented yet")
+        return self.clone(node, dict())
+
+    def clone(self, node: Optional[Node], map: Optional[Dict[Node]]) -> Optional[Node]:
+        if not node:
+            return None
+        
+        if node.val in map:
+            return map[node.val]
+        
+        copy = Node(node.val)
+        map[node.val] = copy
+
+        for neighbour in node.neighbors:
+            copy.neighbors.append(self.clone(neighbour, map))
+
+        
+        return copy
